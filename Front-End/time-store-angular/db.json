@@ -1,0 +1,7 @@
+{
+    "watches": [
+      { "id": 1, "name": "Rolex", "price": 1000, "description":"Made in Italy" },
+      { "id": 2, "name": "Movado", "price": 2000, "description":"Made in Germany" }
+    ],
+    "user":{}
+  }
