@@ -1,11 +1,13 @@
-package com.example.demo.registration.token;
+package com.revature.demo.registration.token;
 
-import com.example.demo.appuser.AppUser;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 
 import javax.persistence.*;
+
+import com.revature.demo.appuser.AppUser;
+
 import java.time.LocalDateTime;
 
 @Getter

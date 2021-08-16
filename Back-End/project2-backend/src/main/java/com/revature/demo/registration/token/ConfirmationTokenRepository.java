@@ -1,4 +1,4 @@
-package com.example.demo.registration.token;
+package com.revature.demo.registration.token;
 
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Modifying;

@@ -1,4 +1,4 @@
-package com.example.demo.registration;
+package com.revature.demo.registration;
 
 import org.springframework.stereotype.Service;
 

@@ -1,11 +1,12 @@
-package com.example.demo.registration;
+package com.revature.demo.registration;
 
-import com.example.demo.appuser.AppUser;
-import com.example.demo.appuser.AppUserRole;
-import com.example.demo.appuser.AppUserService;
-import com.example.demo.email.EmailSender;
-import com.example.demo.registration.token.ConfirmationToken;
-import com.example.demo.registration.token.ConfirmationTokenService;
+import com.revature.demo.appuser.AppUser;
+import com.revature.demo.appuser.AppUserRole;
+import com.revature.demo.appuser.AppUserService;
+import com.revature.demo.email.EmailSender;
+import com.revature.demo.registration.token.ConfirmationToken;
+import com.revature.demo.registration.token.ConfirmationTokenService;
+
 import lombok.AllArgsConstructor;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
