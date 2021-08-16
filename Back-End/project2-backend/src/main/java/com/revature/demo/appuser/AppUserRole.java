@@ -1,4 +1,4 @@
-package com.example.demo.appuser;
+package com.revature.demo.appuser;
 
 public enum AppUserRole {
     USER,
