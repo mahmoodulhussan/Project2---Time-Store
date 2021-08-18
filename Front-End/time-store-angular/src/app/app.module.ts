@@ -8,18 +8,18 @@ import { WatchItemsContainerComponent } from './components/watch-items-container
 import { WatchComponent } from './components/watch/watch.component';
 import { HttpClientModule } from '@angular/common/http';
 import { LoginPageComponent } from './components/login-page/login-page.component';
-<<<<<<< HEAD
-import { ButtonComponentComponent } from './components/button-component/button-component.component';
-import { NavbarComponentComponent } from './components/navbar-component/navbar-component.component';
+// <<<<<<< HEAD
+// import { ButtonComponentComponent } from './components/button-component/button-component.component';
+// import { NavbarComponentComponent } from './components/navbar-component/navbar-component.component';
 
-import { FormsModule } from '@angular/forms';
-import { AppRoutingModule } from './app-routing.module';
+// import { FormsModule } from '@angular/forms';
+// import { AppRoutingModule } from './app-routing.module';
 
 
 
-=======
-import { SignupComponent } from './components/signup/signup.component';
->>>>>>> mahmoods-front-end-branch
+// =======
+// import { SignupComponent } from './components/signup/signup.component';
+// >>>>>>> mahmoods-front-end-branch
 @NgModule({
   declarations: [
     AppComponent,
@@ -27,16 +27,16 @@ import { SignupComponent } from './components/signup/signup.component';
     WatchItemsContainerComponent,
     WatchComponent,
     LoginPageComponent,
-<<<<<<< HEAD
-    ButtonComponentComponent,
-    NavbarComponentComponent
-  ],
-  imports: [
-    BrowserModule,
-    HttpClientModule,
-    FormsModule,
-    AppRoutingModule
-=======
+// <<<<<<< HEAD
+//     ButtonComponentComponent,
+//     NavbarComponentComponent
+//   ],
+//   imports: [
+//     BrowserModule,
+//     HttpClientModule,
+//     FormsModule,
+//     AppRoutingModule
+// =======
     SignupComponent
   ],
   imports: [
