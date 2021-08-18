@@ -10,7 +10,8 @@ spring:
     username: socialuser
   jpa:
     hibernate:
-      ddl-auto: create-drop
+    #change it back to update in dev and for to test change it back to create-drop
+      ddl-auto: update
     properties:
       hibernate:
         dialect: org.hibernate.dialect.PostgreSQLDialect
