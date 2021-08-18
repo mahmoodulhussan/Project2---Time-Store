@@ -13,11 +13,12 @@
       "description": "Made in Germany"
     }
   ],
-  "user": {
+  "users":[ {
     "id": 5,
     "email": "teddy@gmail.com",
     "password": "123"
-  },
+  }
+],
   "orders": [
     {
       "user": 5,

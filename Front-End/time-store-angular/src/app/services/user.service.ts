@@ -15,7 +15,7 @@ export class UserService {
   }
 
   login( email:String, password:String) : Observable<User>{
-    return this.http.post<User>("'http://localhost:3000/user", JSON.stringify({ email, password}))
+    return this.http.post<User>("http://localhost:3000/login", JSON.stringify({ email, password}))
     .pipe(catchError((e)=>{
       return throwError(e);
     }));

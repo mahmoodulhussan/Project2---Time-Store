@@ -22,7 +22,29 @@ export class LoginPageComponent implements OnInit {
   
   onSubmit(): void{
     console.log(this.email, this.password)
-    this.userService.login(this. email, this.password)    
+   
+
+    this.userService.login(this.email, this.password)    
+    .subscribe(data => {console.log(data)
+    //save loggined buyer id  in local storage 
+    //this.localStorageService.setItem( 'id'  , JSON.stringify( data.id)   );
+   // this.error = false;
+    //this.router.navigateByUrl('/home');
+  },
+    (error) => this.error = true);
+
+
+
+
+
+
+
+
+
+
+
+   /*
+    this.userService.login(this.email, this.password)    
     .subscribe(data => {this.userService.user = {
       id: data.id,
       email: data.email,
@@ -35,9 +57,9 @@ export class LoginPageComponent implements OnInit {
     this.router.navigateByUrl('/home');
   },
     (error) => this.error = true);
+
+   */
   }
-
-
   ngOnInit(): void {
   }
 
