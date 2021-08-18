@@ -23,11 +23,52 @@ import lombok.ToString;
 public class Buyer {
 	
 	@Id
-	@Column(name = "buyer_id")
+	@Column(name = "buyer_id", nullable = false)
 	@GeneratedValue(strategy = GenerationType.AUTO)
 	private int id;
 	
-	@JoinColumn()
+	@Column(name = "first_name", nullable = false)
+    private String first; // first name
+
+    @Column(name = "last_name", nullable = false)
+    private String last; // last name
+
+    @Column(name = "username", nullable = false, unique = true)
+    private String username;
+
+    @Column(name = "email", nullable = false, unique = true)
+    private String email;
+
+    @Column(name = "password", nullable = false)
+    private String pass; // password
+    
+    // for registration
+    public Buyer(String first, String last, String username, String email, String pass) {
+		this.first = first;
+		this.last = last;
+		this.username = username;
+		this.email = email;
+		this.pass = pass;
+	}
+	
+    // to get all info
+	public Buyer(int id, String first, String last, String email, String username, String pass) {
+		this.id = id;
+		this.first = first;
+		this.last = last;
+		this.email = email;
+		this.username = username;
+		this.pass = pass;
+	}
+	
+	// for buying ??
+	public Buyer(String first, String last, String email, String pass) {
+		this.first = first;
+		this.last = last;
+		this.email = email;
+		this.pass = pass;
+	}
+	
 	
 	
 }
