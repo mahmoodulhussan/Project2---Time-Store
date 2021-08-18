@@ -4,6 +4,8 @@ import { WatchService } from 'src/app/services/watch.service';
 import { Observable } from 'rxjs';
 
 import { Watch } from 'src/app/Watch';
+
+import { Order } from 'src/app/Order';
 @Component({
   selector: 'app-watch-items-container',
   templateUrl: './watch-items-container.component.html',
@@ -16,6 +18,12 @@ export class WatchItemsContainerComponent implements OnInit {
 watches: Observable<Watch[]> = new Observable<Watch[]>();
 
   constructor(private watchService:WatchService) { }
+
+
+
+
+
+
 
   ngOnInit(): void {
     //get  all the watches when this compnent in shown in the homepage component

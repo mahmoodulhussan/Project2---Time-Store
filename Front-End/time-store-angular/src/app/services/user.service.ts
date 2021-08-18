@@ -1,5 +1,8 @@
 import { Injectable } from '@angular/core';
-
+import { User } from '../User';
+import {HttpClient} from '@angular/common/http';
+import { Observable, throwError } from 'rxjs';
+import {catchError, retry} from 'rxjs/operators';
 @Injectable({
   providedIn: 'root'
 })
@@ -7,11 +10,12 @@ export class UserService {
 
   user:User = {
     id:0,
-    username: ""
+    email: "",
+    password:""
   }
 
-  login(username:string, password:string) Observable<User>{
-    return this.http.post<User>("url", JSON.stringify({username, password}))
+  login( email:String, password:String) : Observable<User>{
+    return this.http.post<User>("'http://localhost:3000/user", JSON.stringify({ email, password}))
     .pipe(catchError((e)=>{
       return throwError(e);
     }));

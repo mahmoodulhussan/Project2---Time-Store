@@ -7,17 +7,29 @@ import { WatchItemsContainerComponent } from './components/watch-items-container
 import { WatchComponent } from './components/watch/watch.component';
 import { HttpClientModule } from '@angular/common/http';
 import { LoginPageComponent } from './components/login-page/login-page.component';
+import { ButtonComponentComponent } from './components/button-component/button-component.component';
+import { NavbarComponentComponent } from './components/navbar-component/navbar-component.component';
+
+import { FormsModule } from '@angular/forms';
+import { AppRoutingModule } from './app-routing.module';
+
+
+
 @NgModule({
   declarations: [
     AppComponent,
     HomePageComponent,
     WatchItemsContainerComponent,
     WatchComponent,
-    LoginPageComponent
+    LoginPageComponent,
+    ButtonComponentComponent,
+    NavbarComponentComponent
   ],
   imports: [
     BrowserModule,
-    HttpClientModule
+    HttpClientModule,
+    FormsModule,
+    AppRoutingModule
   ],
   providers: [],
   bootstrap: [AppComponent]

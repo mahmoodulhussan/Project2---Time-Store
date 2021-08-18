@@ -2,6 +2,10 @@ import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { UserService } from 'src/app/services/user.service';
 
+import { LocalStorageService } from 'src/app/services/local-storage.service';
+
+
+
 @Component({
   selector: 'app-login-page',
   templateUrl: './login-page.component.html',
@@ -9,22 +13,26 @@ import { UserService } from 'src/app/services/user.service';
 })
 export class LoginPageComponent implements OnInit {
 
-  username: string = '';
+  email: string = '';
   password: string = '';
   error: boolean = false;
 
-
-  constructor(private userService:UserService, private router:Router) { }
+   
+  constructor(private userService:UserService, private router:Router, private localStorageService:LocalStorageService ) { }
   
   onSubmit(): void{
-    console.log(this.username, this.password)
-    .subscribe(data => {this.userService.user {
+    console.log(this.email, this.password)
+    this.userService.login(this. email, this.password)    
+    .subscribe(data => {this.userService.user = {
       id: data.id,
-      username: data.username
-
+      email: data.email,
+      password:data.password
     }
+
+    //save loggined buyer id  in local storage 
+    this.localStorageService.setItem( 'id'  , JSON.stringify( data.id)   );
     this.error = false;
-    this.router.nevigateByUrl('/home');
+    this.router.navigateByUrl('/home');
   },
     (error) => this.error = true);
   }

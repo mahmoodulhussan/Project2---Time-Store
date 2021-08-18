@@ -1,7 +1,34 @@
 {
-    "watches": [
-      { "id": 1, "name": "Rolex", "price": 1000, "description":"Made in Italy" },
-      { "id": 2, "name": "Movado", "price": 2000, "description":"Made in Germany" }
-    ],
-    "user":{}
-  }
+  "watches": [
+    {
+      "id": 1,
+      "name": "Rolex",
+      "price": 1000,
+      "description": "Made in Italy"
+    },
+    {
+      "id": 2,
+      "name": "Movado",
+      "price": 2000,
+      "description": "Made in Germany"
+    }
+  ],
+  "user": {
+    "id": 5,
+    "email": "teddy@gmail.com",
+    "password": "123"
+  },
+  "orders": [
+    {
+      "user": 5,
+      "watch": 1,
+      "id": 1
+    },
+    {
+      "user": 5,
+      "watch": 2,
+      "id": 2
+    }
+  ]
+}  
+

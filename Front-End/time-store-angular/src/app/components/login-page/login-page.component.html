@@ -1,17 +1,17 @@
 
 <h1>WELCOME TO TIME-STORE</h1>
 <p>Login to Continue</p>
-<h1 *ngIf="error">Username of Password Incorrect</h1>
+<h1 *ngIf="error"> Email or Password Incorrect</h1>
 <form id="login" (ngSubmit)="onSubmit()">
     <div class="input-div">
-        <label for="username">Username: </label>
+        <label for=" email"> Email: </label>
         <input
-            id="username"
+            id=" email"
             type="text"
-            name="username"
+            name=" email"
             maxlength="50"
             required
-            [(ngModel)]="username"
+            [(ngModel)]="email"
         />
     </div>
     <div class="input-div">
