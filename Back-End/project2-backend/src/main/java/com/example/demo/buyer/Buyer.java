@@ -1,11 +1,19 @@
 package com.example.demo.buyer;
 
+import java.util.ArrayList;
+import java.util.List;
+
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.OneToMany;
 import javax.persistence.Table;
+
+import com.fasterxml.jackson.annotation.JsonIgnore;
+import com.revature.demo.orders.Orders;
 
 //import lombok.EqualsAndHashCode;
 import lombok.Getter;
@@ -41,6 +49,11 @@ public class Buyer {
 
     @Column(name = "password", nullable = false)
     private String pass; // password
+    
+    
+    @OneToMany(mappedBy = "order_holder", fetch = FetchType.LAZY)
+    @JsonIgnore
+    private List<Orders> ordersList = new ArrayList<Orders>();
     
     // for registration
     public Buyer(String first, String last, String username, String email, String pass) {
