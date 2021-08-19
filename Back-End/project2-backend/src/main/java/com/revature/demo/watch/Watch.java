@@ -28,7 +28,6 @@ import lombok.ToString;
 public class Watch {
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)
-	@ManyToMany(mappedBy="orders_table")
 	public int watchid;
 	@Column(name="price", nullable=false)
 	public int price;
@@ -36,6 +35,9 @@ public class Watch {
 	public String discription;
 	@Column(name="pic", nullable = false)
 	public String picName;
+	@OneToMany(mappedBy="DratchOrderholder")
+	@JsonIgnore
+	private List<Orders>orderList = new ArrayList<Orders>();
 	public int getWatchid() {
 		return watchid;
 	}
