@@ -1,5 +1,6 @@
 package com.revature.demo.watch;
 
+import java.util.ArrayList;
 import java.util.List;
 import java.util.Set;
 
@@ -9,6 +10,7 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.ManyToMany;
+import javax.persistence.OneToMany;
 import javax.persistence.Table;
 
 
@@ -26,7 +28,6 @@ import lombok.ToString;
 public class Watch {
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)
-	@ManyToMany(mappedBy="orders_table")
 	public int watchid;
 	@Column(name="price", nullable=false)
 	public int price;
@@ -34,6 +35,9 @@ public class Watch {
 	public String discription;
 	@Column(name="pic", nullable = false)
 	public String picName;
+	@OneToMany(mappedBy="DratchOrderholder")
+	@JsonIgnore
+	private List<Orders>orderList = new ArrayList<Orders>();
 	public int getWatchid() {
 		return watchid;
 	}
