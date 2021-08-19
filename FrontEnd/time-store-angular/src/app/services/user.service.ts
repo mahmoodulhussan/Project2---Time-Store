@@ -3,7 +3,7 @@ import { User } from '../User';
 import {HttpClient,  HttpHeaders } from '@angular/common/http';
 import { Observable, throwError, Subject } from 'rxjs';
 
-import {catchError, retry} from 'rxjs/operators';
+import {catchError, last, retry} from 'rxjs/operators';
 @Injectable({
   providedIn: 'root'
 })
@@ -34,10 +34,10 @@ headers = headers.set('Content-Type', 'application/json; charset=utf-8');
 
 
   signup( id:any, firstName:string, lastName:string, email:string, password:string) : Observable<any>{
-
+    console.log(id, firstName, lastName, email, password)
     let headers = new HttpHeaders();
-headers = headers.set('Content-Type', 'application/json; charset=utf-8');
-    return this.http.post<any>("http://localhost:3000/signup", JSON.stringify({ id, firstName, lastName, email,  password}) ,{headers}  )
+headers = headers.set('Content-Type', 'application/json');
+    return this.http.post<any>("http://localhost:8080/api/v1/registration", JSON.stringify({ id, firstName, lastName, email,  password}) ,{headers}  )
     .pipe(catchError((e)=>{
       return throwError(e);
     }));
