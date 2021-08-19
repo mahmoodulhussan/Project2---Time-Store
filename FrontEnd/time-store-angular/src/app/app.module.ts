@@ -15,6 +15,9 @@ import { FormsModule } from '@angular/forms';
 import { AppRoutingModule } from './app-routing.module';
 import { RegisterComponent } from './components/register/register.component';
 import { WishlistComponent } from './components/wishlist/wishlist.component';
+import { UsersContainerComponent } from './components/users-container/users-container.component';
+import { NewUserComponent } from './components/new-user/new-user.component';
+import { UserComponent } from './components/user/user.component';
 
 
 
@@ -29,6 +32,9 @@ import { WishlistComponent } from './components/wishlist/wishlist.component';
     NavbarComponentComponent,
     RegisterComponent,
     WishlistComponent,
+    UsersContainerComponent,
+    NewUserComponent,
+    UserComponent,
     
   ],
   imports: [
