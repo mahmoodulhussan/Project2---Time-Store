@@ -26,8 +26,11 @@ export class LoginPageComponent implements OnInit {
 
     this.userService.login(this.email, this.password)    
     .subscribe(data => {console.log(data)
+     this.userService.user.id = data.user.id;
+     this.userService.user.email=data.user.email;
      
-      console.log(data.user.id)
+     
+     console.log(data.user.id)
 //buyers : [{buyerId: 9 , whishList: [{watchId: 70, name: "something", material:"blaalall", price: 456}] }]
      
 
@@ -35,12 +38,19 @@ export class LoginPageComponent implements OnInit {
 //check if buyer key  exist in local storage
       //if there are buyers ; 
       /// get the buyers array which holds buyer object; then check if buyer there ; if not add user and wishlist array ; buyer object whole id and email and wishlist arry
-      
-      if (this.localStorageService.getItem('buyers')) {
+      let usersArr = this.localStorageService.getItem('buyers');
+      if (usersArr) {
         //parse the json array
+
+        usersArr=    JSON.parse(usersArr);
+        //check if any match loggined user
+        //loop through each object to find match id
+
+        //if match dont add again
 
       } else {
         //else create buyers array
+
       }
   
   //this.localStorageService.getItem('buyers');

@@ -37,46 +37,47 @@ headers = headers.set('Content-Type', 'application/json; charset=utf-8');
     // this.subject.next({ type: 'error', text: message });
 }
 
-getUsers(){
-  this.http.get<User[]>('http://localhost:8080/api/users')
-  .pipe(
-    catchError((e)=> {
-      return throwError(e);
-    }))
-    .subscribe(
-      (data) => {
-        this.users = data;
-        this.subject.next(this.users);
-      }
-    )
-}
+// getUsers(){
+//   this.http.get<User[]>('http://localhost:8080/api/users')
+//   .pipe(
+//     catchError((e)=> {
+//       return throwError(e);
+//     }))
+//     .subscribe(
+//       (data) => {
+//         this.users = data;
+//         this.subject.next(this.users);
+//       }
+//     )
+// }
 
-addUser(user: User){
-  let obj = {
-    userId: this.userService.user.id,
-    firstName: user.firstName,
-    lastName: user.lastName,
-    email: user.email,
-    password: user.password
-  }
+// addUser(user: User){
+//   let obj = {
+//     userId: this.userService.user.id,
+//     firstName: user.firstName,
+//     lastName: user.lastName,
+//     email: user.email,
+//     password: user.password
+//   }
 
-  this.http.post('http://localhost:8080/api/users', JSON.stringify(obj))
-  .pipe(
-    catchError((e)=>{
-      return throwError(e);
-    }))
-    .subscribe(
-      (data) => {
-        console.log(data);
-        this.users.unshift(user);
-        this.subject.next(this.users);
-      }
-    )
-}
+//   this.http.post('http://localhost:8080/api/users', JSON.stringify(obj))
+//   .pipe(
+//     catchError((e)=>{
+//       return throwError(e);
+//     }))
+//     .subscribe(
+//       (data) => {
+//         console.log(data);
+//         this.users.unshift(user);
+//         this.subject.next(this.users);
+//       }
+//     )
+// }
 
 //   register(user: User) {
 //     // return this.http.post(`${}/users/register`, user);
 // }
 
-  constructor(private http: HttpClient, private userService:UserService) { }
+//the problem is here n; you ccan not inject userService into its own class
+  constructor(private http: HttpClient) { }
 }

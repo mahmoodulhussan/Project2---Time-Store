@@ -33,7 +33,7 @@ export class RegisterComponent implements OnInit {
   submitted = false;
   error: string;
 
-  constructor( private userService:UserService){}
+  constructor(){}
 
   // constructor(
   //       private formBuilder: FormBuilder,
@@ -48,20 +48,20 @@ export class RegisterComponent implements OnInit {
     //   return;
     // }
 
-    const newUser: User = {
-      id: 0,
-      firstName: this.userService.user.firstName,
-      lastName: this.userService.user.lastName,
-      email: this.userService.user.email,
-      password: this.userService.user.password
-    }
+    // const newUser: User = {
+    //   id: 0,
+    //   firstName: this.userService.user.firstName,
+    //   lastName: this.userService.user.lastName,
+    //   email: this.userService.user.email,
+    //   password: this.userService.user.password
+    // }
 
-    this.onAddUser.emit(newUser);
+    // this.onAddUser.emit(newUser);
 
-    this.firstName = '';
-    this.lastName = '';
-    this.email = '';
-    this.password = '';
+    // this.firstName = '';
+    // this.lastName = '';
+    // this.email = '';
+    // this.password = '';
     // this.error = false
   }
 

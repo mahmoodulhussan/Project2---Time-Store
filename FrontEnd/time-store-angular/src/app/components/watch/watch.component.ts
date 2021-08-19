@@ -4,6 +4,7 @@ import { Component, OnInit, Output, EventEmitter, Input } from '@angular/core';
 import { Order } from 'src/app/Order';
 import { OrderService } from 'src/app/services/order.service';
 
+import { UserService } from 'src/app/services/user.service'; 
 
 import { LocalStorageService } from 'src/app/services/local-storage.service';
 
@@ -31,12 +32,23 @@ userId:number = 0 ;
 
 
 performOnbuy():void {
-  const idJson =  this.localStorageService.getItem('id');
-   const userId = idJson !== null ? JSON.parse(idJson) : 0;
+  // const idJson =  this.localStorageService.getItem('id');
+  //  const userId = idJson !== null ? JSON.parse(idJson) : 0;
+
   
+  if (this.userService.user.id != 0 ){
+    this.userId= this.userService.user.id;
+
+
+  }
+  if ( this.userId== 0){
+
+    alert('Please login to buy a watch');
+    return;
+  }
   
   const order:Order = {
-      user : userId     ,//  if user id is zero then no user in the local storage
+      user : this.userId , //  if user id is zero then no user in the local storage
       
       watch : this.watch.id
   }
@@ -45,7 +57,7 @@ performOnbuy():void {
   console.log('button work')
  }
 
-  constructor( private localStorageService:LocalStorageService,  private OrderService:OrderService) { }
+  constructor( private localStorageService:LocalStorageService,  private OrderService:OrderService, private userService:UserService) { }
 
   ngOnInit(): void {
   }
