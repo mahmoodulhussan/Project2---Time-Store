@@ -22,6 +22,12 @@ this.router.navigateByUrl('/login');
 
   }
 
+  directToRegisterPage():void{
+
+    this.router.navigateByUrl('/register');
+    
+      }
+
   constructor(private router:Router) { }
 
   ngOnInit( ): void {
