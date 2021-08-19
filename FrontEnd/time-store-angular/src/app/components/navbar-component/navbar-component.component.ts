@@ -14,7 +14,7 @@ export class NavbarComponentComponent implements OnInit {
 
   loginText: String = "Login";
   signupText: String = "SignUp";
-  wishlistText: String = "Wishlist";
+  //wishlistText: String = "Wishlist";
 
 username:String =  this.userService.user.email? this.userService.user.email: "Guest";
 
@@ -25,7 +25,6 @@ username:String =  this.userService.user.email? this.userService.user.email: "Gu
 this.router.navigateByUrl('/login');
 
   }
-
 
   directToWishlistPage(){
 
