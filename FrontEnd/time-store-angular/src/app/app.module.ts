@@ -14,6 +14,7 @@ import { ReactiveFormsModule } from '@angular/forms';
 import { FormsModule } from '@angular/forms';
 import { AppRoutingModule } from './app-routing.module';
 import { RegisterComponent } from './components/register/register.component';
+import { WishlistComponent } from './components/wishlist/wishlist.component';
 
 
 
@@ -27,6 +28,7 @@ import { RegisterComponent } from './components/register/register.component';
     ButtonComponentComponent,
     NavbarComponentComponent,
     RegisterComponent,
+    WishlistComponent,
     
   ],
   imports: [

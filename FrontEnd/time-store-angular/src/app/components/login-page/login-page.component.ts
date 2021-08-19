@@ -28,8 +28,25 @@ export class LoginPageComponent implements OnInit {
     .subscribe(data => {console.log(data)
      
       console.log(data.user.id)
+//buyers : [{buyerId: 9 , whishList: [{watchId: 70, name: "something", material:"blaalall", price: 456}] }]
+     
+
+
+//check if buyer key  exist in local storage
+      //if there are buyers ; 
+      /// get the buyers array which holds buyer object; then check if buyer there ; if not add user and wishlist array ; buyer object whole id and email and wishlist arry
+      
+      if (this.localStorageService.getItem('buyers')) {
+        //parse the json array
+
+      } else {
+        //else create buyers array
+      }
+  
+  //this.localStorageService.getItem('buyers');
+
    // save loggined buyer id  in local storage 
-   this.localStorageService.setItem( "id"  ,   JSON.stringify(data.user.id) );
+   //this.localStorageService.setItem( "buyers"  ,   JSON.stringify([data.user.id) );
    this.error = false;
    this.router.navigateByUrl('');
   },
