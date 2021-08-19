@@ -24,14 +24,14 @@ export class RegisterComponent implements OnInit {
   @Output() onAddUser: EventEmitter<User> = new EventEmitter();
   
   
-  registerForm: FormGroup;
-  firstName: string = '';
-  lastName: string = '';
-  email: string = '';
-  password: string = '';
-  loading = false;
-  submitted = false;
-  error: string;
+  // registerForm: FormGroup;
+  // firstName: string = '';
+  // lastName: string = '';
+  // email: string = '';
+  // password: string = '';
+  // loading = false;
+  // submitted = false;
+  // error: string;
 
   constructor( private userService:UserService){}
 
@@ -48,21 +48,21 @@ export class RegisterComponent implements OnInit {
     //   return;
     // }
 
-    const newUser: User = {
-      id: 0,
-      firstName: this.userService.user.firstName,
-      lastName: this.userService.user.lastName,
-      email: this.userService.user.email,
-      password: this.userService.user.password
-    }
+    // const newUser: User = {
+    //   id: 0,
+    //   firstName: this.userService.user.firstName,
+    //   lastName: this.userService.user.lastName,
+    //   email: this.userService.user.email,
+    //   password: this.userService.user.password
+    // }
 
-    this.onAddUser.emit(newUser);
+    // this.onAddUser.emit(newUser);
 
-    this.firstName = '';
-    this.lastName = '';
-    this.email = '';
-    this.password = '';
-    // this.error = false
+    // this.firstName = '';
+    // this.lastName = '';
+    // this.email = '';
+    // this.password = '';
+    // // this.error = false
   }
 
 

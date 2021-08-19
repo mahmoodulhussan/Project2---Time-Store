@@ -14,7 +14,7 @@ export class NewUserComponent implements OnInit {
   firstName: string = '';
   lastName: string = '';
   email: string = '';
-  passowrd: string = ''
+  password: string = ''
   error: boolean = false;
 
   constructor(private userService:UserService) { }
@@ -38,7 +38,7 @@ export class NewUserComponent implements OnInit {
     this.firstName = '';
     this.lastName = '';
     this.email = '';
-    this.passowrd = '';
+    this.password = '';
     this.error = false;
   }
 

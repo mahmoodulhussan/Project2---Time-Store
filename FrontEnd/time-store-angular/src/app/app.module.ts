@@ -17,6 +17,7 @@ import { RegisterComponent } from './components/register/register.component';
 import { UsersContainerComponent } from './components/users-container/users-container.component';
 import { NewUserComponent } from './components/new-user/new-user.component';
 import { UserComponent } from './components/user/user.component';
+import { SignupPageComponent } from './components/signup-page/signup-page.component';
 
 
 
@@ -33,6 +34,7 @@ import { UserComponent } from './components/user/user.component';
     UsersContainerComponent,
     NewUserComponent,
     UserComponent,
+    SignupPageComponent,
     
   ],
   imports: [

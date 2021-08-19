@@ -10,19 +10,21 @@ import { UserService } from '../../services/user.service';
 })
 export class UsersContainerComponent implements OnInit {
 
-  users: Observable<User[]> = new Observable<User[]>();
+  // users: Observable<User[]> = new Observable<User[]>();
 
-  addUser(user: User): void{
-    this.userService.addUser(user);
-    this.users = this.userService.subject;
-  }
+  //   posts: Post[] = [];
+
+  // addUser(user: User): void{
+  //   this.users = this.userService.addUser(user);
+    // this.users = this.userService.subject;
+  // }
 
   constructor(private userService:UserService) { }
 
   ngOnInit(): void {
     //We will use the ngOnInit lifecycle method to grap the posts as soon as the posts-container component is created
-    this.userService.getUsers();
-    this.users = this.userService.subject;
+    // this.users = this.userService.getUsers();
+    // this.users = this.userService.subject;
   }
 
 }

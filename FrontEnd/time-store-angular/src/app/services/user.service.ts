@@ -32,13 +32,25 @@ headers = headers.set('Content-Type', 'application/json; charset=utf-8');
  
   }
 
+
+  signup( id:any, firstName:string, lastName:string, email:string, password:string) : Observable<any>{
+
+    let headers = new HttpHeaders();
+headers = headers.set('Content-Type', 'application/json; charset=utf-8');
+    return this.http.post<any>("http://localhost:3000/signup", JSON.stringify({ id, firstName, lastName, email,  password}) ,{headers}  )
+    .pipe(catchError((e)=>{
+      return throwError(e);
+    }));
+ 
+  }
+
   error(message: string, keepAfterRouteChange = false) {
     // this.keepAfterRouteChange = keepAfterRouteChange;
     // this.subject.next({ type: 'error', text: message });
 }
 
 getUsers(){
-  this.http.get<User[]>('http://localhost:8080/api/users')
+  this.http.get<User[]>('http://localhost:3000/users')
   .pipe(
     catchError((e)=> {
       return throwError(e);
@@ -51,32 +63,42 @@ getUsers(){
     )
 }
 
-addUser(user: User){
-  let obj = {
-    userId: this.userService.user.id,
-    firstName: user.firstName,
-    lastName: user.lastName,
-    email: user.email,
-    password: user.password
-  }
+// addUser(user: User){
+//   let obj = {
+//     userId: this.user.id,
+//     firstName: this.user.firstName,
+//     lastName: this.user.lastName,
+//     email: this.user.email,
+//     password: this.user.password
+//   }
 
-  this.http.post('http://localhost:8080/api/users', JSON.stringify(obj))
-  .pipe(
-    catchError((e)=>{
-      return throwError(e);
-    }))
-    .subscribe(
-      (data) => {
-        console.log(data);
-        this.users.unshift(user);
-        this.subject.next(this.users);
-      }
-    )
-}
+//   this.http.post('http://localhost:3000/users', JSON.stringify(obj))
+//   .pipe(
+//     catchError((e)=>{
+//       return throwError(e);
+//     }))
+//     .subscribe(
+//       (data) => {
+//         console.log(data);
+//         this.users.unshift(user);
+//         this.subject.next(this.users);
+//       }
+//     )
+// }
+
+// getUsers():User[]{
+//   return USERS;
+// }
+
+// addUser(user: User): User[]{
+//   let postArr: User[] = USERS;
+//   userArr.unshift(user);
+//   return userArr;
+// }
 
 //   register(user: User) {
 //     // return this.http.post(`${}/users/register`, user);
 // }
 
-  constructor(private http: HttpClient, private userService:UserService) { }
+  constructor(private http: HttpClient) { }
 }
