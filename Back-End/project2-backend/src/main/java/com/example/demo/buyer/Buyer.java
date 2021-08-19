@@ -42,6 +42,8 @@ public class Buyer {
     @Column(name = "password", nullable = false)
     private String pass; // password
     
+    
+    
     // for registration
     public Buyer(String first, String last, String username, String email, String pass) {
 		this.first = first;
