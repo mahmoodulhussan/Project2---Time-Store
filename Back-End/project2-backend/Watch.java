@@ -8,8 +8,6 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
-import javax.persistence.ManyToMany;
-import javax.persistence.OneToMany;
 import javax.persistence.Table;
 
 
@@ -34,9 +32,6 @@ public class Watch {
 	public String discription;
 	@Column(name="pic", nullable = false)
 	public String picName;
-	@OneToMany(mappedBy="DratchOrderholder")
-	@JsonIgnore
-	private List<Orders>orderList = new ArrayList<Orders>();
 	public int getWatchid() {
 		return watchid;
 	}
@@ -47,11 +42,11 @@ public class Watch {
 	public void setPrice(int price) {
 		this.price = price;
 	}
-	public String getDescription() {
-		return description;
+	public String getDiscription() {
+		return discription;
 	}
-	public void setDescription(String description) {
-		this.description = description;
+	public void setDiscription(String discription) {
+		this.discription = discription;
 	}
 	public String getPicName() {
 		return picName;
@@ -64,11 +59,11 @@ public class Watch {
 		super();
 	}
 
-	public Watch(int watchid, int price, String description, String picName) {
+	public Watch(int watchid, int price, String discription, String picName) {
 		super();
 		this.watchid = watchid;
 		this.price = price;
-		this.description = description;
+		this.discription = discription;
 		this.picName = picName;
 	}
 	
