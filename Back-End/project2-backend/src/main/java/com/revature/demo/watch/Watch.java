@@ -1,5 +1,6 @@
 package com.revature.demo.watch;
 
+
 import java.util.List;
 import java.util.Set;
 
@@ -9,6 +10,7 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.ManyToMany;
+import javax.persistence.OneToMany;
 import javax.persistence.Table;
 
 
@@ -44,11 +46,11 @@ public class Watch {
 	public void setPrice(int price) {
 		this.price = price;
 	}
-	public String getDiscription() {
-		return discription;
+	public String getDescription() {
+		return description;
 	}
-	public void setDiscription(String discription) {
-		this.discription = discription;
+	public void setDescription(String description) {
+		this.description = description;
 	}
 	public String getPicName() {
 		return picName;
@@ -61,11 +63,11 @@ public class Watch {
 		super();
 	}
 
-	public Watch(int watchid, int price, String discription, String picName) {
+	public Watch(int watchid, int price, String description, String picName) {
 		super();
 		this.watchid = watchid;
 		this.price = price;
-		this.discription = discription;
+		this.description = description;
 		this.picName = picName;
 	}
 	
