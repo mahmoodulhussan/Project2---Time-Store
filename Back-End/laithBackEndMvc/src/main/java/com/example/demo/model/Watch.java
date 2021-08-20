@@ -2,14 +2,14 @@ package com.example.demo.model;
 
 import java.util.ArrayList;
 import java.util.List;
-
+import java.util.Set;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
-
+import javax.persistence.ManyToMany;
 import javax.persistence.OneToMany;
 import javax.persistence.Table;
 
@@ -24,40 +24,23 @@ import lombok.ToString;
 
 @Getter
 @Setter
-
-@NoArgsConstructor
-@AllArgsConstructor
-@ToString
 @Entity
-@Table
+@Table(name = "watch")
 public class Watch {
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)
-	private int watchid;
-	@Column(nullable=false)
-	private int price;
-	@Column( nullable = false)
-	private  String discription;
-	@Column( nullable = false)
-	private  String picName;
-	
-	@OneToMany(mappedBy="watchorderholder" )
+	public Integer watchid;
+	@Column(name="price", nullable=false)
+	public int price;
+	@Column(name="discription", nullable = false)
+	public String discription;
+	@Column(name="pic", nullable = false)
+	public String picName;
+	@OneToMany(mappedBy="watch_orderholder" )
 	@JsonIgnore
 	private List<Orders>ordersList = new ArrayList<Orders>();
-
-	public Watch(int price, String discription, String picName, List<Orders> ordersList) {
-		super();
-		this.price = price;
-		this.discription = discription;
-		this.picName = picName;
-		this.ordersList = ordersList;
-	}
-
-	public Watch(int price, String discription, String picName) {
-		super();
-		this.price = price;
-		this.discription = discription;
-		this.picName = picName;
+	public int getWatchid() {
+		return watchid;
 	}
 	
 
