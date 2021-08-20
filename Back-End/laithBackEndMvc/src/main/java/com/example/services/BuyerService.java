@@ -1,8 +1,22 @@
 package com.example.services;
 
+import org.springframework.stereotype.Service;
+
+import org.springframework.beans.factory.annotation.Autowired;
+
 import com.example.demo.model.Buyer;
+
 import com.example.repos.BuyerRepo;
 
+import lombok.NoArgsConstructor;
+
+import lombok.AllArgsConstructor;
+
+
+
+@Service
+@NoArgsConstructor
+@AllArgsConstructor(onConstructor=@__(@Autowired))
 public class BuyerService {
 
 	private BuyerRepo uDao;

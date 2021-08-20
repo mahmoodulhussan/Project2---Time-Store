@@ -6,7 +6,7 @@ import org.springframework.data.jpa.repository.JpaRepository;
 
 import com.example.demo.model.Buyer;
 
-public interface BuyerRepo extends JpaRepository<Buyer, Long> {
+public interface BuyerRepo extends JpaRepository<Buyer, Integer> {
 	
 	public List<Buyer> findAll();
 	Buyer findByUsername(String email);
