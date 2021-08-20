@@ -44,6 +44,17 @@ headers = headers.set('Content-Type', 'application/json');
  
   }
 
+  update( email:string, password:string) : Observable<any>{
+    console.log(email, password)
+    let headers = new HttpHeaders();
+headers = headers.set('Content-Type', 'application/json');
+    return this.http.post<any>("http://localhost:8080/api/v1/update", JSON.stringify({email,  password}) ,{headers}  )
+    .pipe(catchError((e)=>{
+      return throwError(e);
+    }));
+ 
+  }
+
   error(message: string, keepAfterRouteChange = false) {
     // this.keepAfterRouteChange = keepAfterRouteChange;
     // this.subject.next({ type: 'error', text: message });

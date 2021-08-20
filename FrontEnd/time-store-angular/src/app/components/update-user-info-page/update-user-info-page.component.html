@@ -1,0 +1,29 @@
+<p>update-user-info-page works!</p>
+
+<form id="update" (ngSubmit)="onSubmit()">
+       
+    <div class="update-input">
+        <input type="text"
+            class="create-user"
+            name="email"
+            [(ngModel)]="email"
+            cols="50"
+            maxlength="50"
+            placeholder="Type your email here">
+        
+    </div>
+    
+    <div class="update-input">
+        <input type="text"
+            class="create-user"
+            name="password"
+            [(ngModel)]="password"
+            cols="50"
+            maxlength="50"
+            placeholder="Type your password here">
+        
+    </div>
+    
+    <input type="submit" value="Update"/>
+    
+    </form>

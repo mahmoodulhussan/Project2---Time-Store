@@ -18,6 +18,7 @@ import { UsersContainerComponent } from './components/users-container/users-cont
 import { NewUserComponent } from './components/new-user/new-user.component';
 import { UserComponent } from './components/user/user.component';
 import { SignupPageComponent } from './components/signup-page/signup-page.component';
+import { UpdateUserInfoPageComponent } from './components/update-user-info-page/update-user-info-page.component';
 
 
 
@@ -35,6 +36,7 @@ import { SignupPageComponent } from './components/signup-page/signup-page.compon
     NewUserComponent,
     UserComponent,
     SignupPageComponent,
+    UpdateUserInfoPageComponent,
     
   ],
   imports: [

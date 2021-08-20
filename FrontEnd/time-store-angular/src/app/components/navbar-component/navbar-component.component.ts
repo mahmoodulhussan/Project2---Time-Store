@@ -14,6 +14,7 @@ export class NavbarComponentComponent implements OnInit {
 
   loginText: String = "Login";
   signupText: String = "SignUp";
+  updateText: String = "Update User Info";
   wishlistText: String = "Wishlist";
 
   directTologinpage():void{
@@ -21,6 +22,12 @@ export class NavbarComponentComponent implements OnInit {
 this.router.navigateByUrl('/login');
 
   }
+
+  directUpdatePage():void{
+
+    this.router.navigateByUrl('/update');
+    
+      }
 
   directToRegisterPage():void{
 

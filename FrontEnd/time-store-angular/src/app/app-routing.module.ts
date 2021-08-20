@@ -8,6 +8,7 @@ import { LoginPageComponent } from './components/login-page/login-page.component
 import { NewUserComponent } from './components/new-user/new-user.component';
 import { UsersContainerComponent } from './components/users-container/users-container.component';
 import { SignupPageComponent } from './components/signup-page/signup-page.component';
+import { UpdateUserInfoPageComponent } from './components/update-user-info-page/update-user-info-page.component';
 
 
 const routes: Routes = [
@@ -20,6 +21,8 @@ const routes: Routes = [
     {path:'user', component: NewUserComponent}
     ,
     {path:'signup', component: SignupPageComponent}
+    ,
+    {path:'update', component: UpdateUserInfoPageComponent}
     ,
     {path:'users', component: UsersContainerComponent}
     ,
