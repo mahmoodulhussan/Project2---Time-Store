@@ -21,6 +21,63 @@ import javax.validation.Valid;
 import lombok.AllArgsConstructor;
 import lombok.NoArgsConstructor;
 
-public class BuyerController {
 
+
+import com.example.demo.model.Buyer;
+import com.example.repos.BuyerRepo;
+import com.example.services.BuyerService;
+import com.example.validator.BuyerValidator;
+
+@RestController
+@RequestMapping(value="/buyer")
+@AllArgsConstructor(onConstructor=@__(@Autowired))
+@NoArgsConstructor
+public class BuyerController {
+	
+	private BuyerService uServ;
+	
+	@InitBinder()
+	protected void initBinder(WebDataBinder binder) {
+		binder.setValidator(new BuyerValidator());
+	}
+
+	@PostMapping("/register")
+	public ResponseEntity<String> createUser(@RequestBody LinkedHashMap<String, String> buyer){
+		System.out.println(buyer);
+		Buyer u = new Buyer(buyer.get("first"), buyer.get("last"), buyer.get("email"), buyer.get("pass"));
+		if(uServ.registerUser(u)) {
+			return new ResponseEntity<>("User was registered", HttpStatus.CREATED);
+		}
+		else {
+			return new ResponseEntity<>("Username or email already registered to a user", HttpStatus.CONFLICT);
+		}
+	}
+	
+	@PostMapping("/login")
+	public ResponseEntity<Buyer> loginUser(@RequestBody LinkedHashMap<String, String> buyer){
+		Buyer u = uServ.loginUser(buyer.get("email"), buyer.get("pass"));
+		if(u == null) {
+			return new ResponseEntity<Buyer>(u, HttpStatus.FORBIDDEN);
+		}
+		return new ResponseEntity<Buyer>(u, HttpStatus.OK);
+	}
+	
+	@GetMapping("/{email}")
+	public ResponseEntity<Buyer> getUser(@PathVariable("username")String email){
+		Buyer u = uServ.displayUser(email);
+		if(u == null) {
+			return new ResponseEntity<Buyer>(u, HttpStatus.NOT_FOUND);
+		}
+		return new ResponseEntity<Buyer>(u, HttpStatus.OK);
+	}
+	
+	@PostMapping("/validate")
+	public ResponseEntity<String> validateUser(@RequestBody @Valid Buyer u, BindingResult result){
+		if(result.hasErrors()) {
+			System.out.println("Errors were had");
+			System.out.println(result.getFieldError());
+			return new ResponseEntity<String>(result.getFieldError().getCode() + " " + result.getFieldError().getDefaultMessage(), HttpStatus.NOT_ACCEPTABLE);
+		}
+		return new ResponseEntity<String>("User is valid", HttpStatus.OK);
+	}
 }
