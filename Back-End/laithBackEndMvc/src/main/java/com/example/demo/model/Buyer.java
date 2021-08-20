@@ -29,29 +29,29 @@ import lombok.ToString;
 @AllArgsConstructor
 @ToString
 @Entity
+@Table(name = "buyer")
 
-@Table
 public class Buyer {
 	
 	@Id
-	@Column(nullable = false)
+	@Column(name = "buyer_id", nullable = false)
 	@GeneratedValue(strategy = GenerationType.AUTO)
 	private int id;
 	
-	@Column(nullable = false)
+	@Column(name = "first_name", nullable = false)
     private String first; // first name
 
-    @Column(nullable = false)
+    @Column(name = "last_name", nullable = false)
     private String last; // last name
 
  
-    @Column( nullable = false, unique = true)
+    @Column(name = "email", nullable = false, unique = true)
     private String email;
 
-    @Column(nullable = false)
+    @Column(name = "password", nullable = false)
     private String pass; // password
 
-    @OneToMany(mappedBy = "orderholder", fetch = FetchType.LAZY)
+    @OneToMany(mappedBy = "order_holder", fetch = FetchType.LAZY)
     @JsonIgnore
     private List<Orders> ordersList = new ArrayList<Orders>();
 
@@ -63,22 +63,7 @@ public class Buyer {
 		this.email = email;
 		this.pass = pass;
 	}
-
-
-	public Buyer(String email, String pass) {
-		super();
-		this.email = email;
-		this.pass = pass;
-	}
-
-
-	public Buyer(List<Orders> ordersList) {
-		super();
-		this.ordersList = ordersList;
-	}
-
-
-
+	
 	
     
     
