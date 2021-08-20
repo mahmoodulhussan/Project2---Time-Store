@@ -12,6 +12,7 @@ import { LocalStorageService } from 'src/app/services/local-storage.service';
 })
 export class UpdateUserInfoPageComponent implements OnInit {
 
+  id: number = 0;
   email: string = '';
   password: string = '';
   error: boolean = false;
@@ -22,13 +23,13 @@ export class UpdateUserInfoPageComponent implements OnInit {
      
   onSubmit(): void{
     console.log(
-      
+      this.id,
       this.email,
       this.password
       )
    
 
-    this.userService.update(this.email, this.password)    
+    this.userService.update(this.id, this.email, this.password)    
     .subscribe(data => {console.log(data)
      
       console.log(data.user.id)

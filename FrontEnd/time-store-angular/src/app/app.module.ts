@@ -13,9 +13,6 @@ import { ReactiveFormsModule } from '@angular/forms';
 
 import { FormsModule } from '@angular/forms';
 import { AppRoutingModule } from './app-routing.module';
-import { RegisterComponent } from './components/register/register.component';
-import { UsersContainerComponent } from './components/users-container/users-container.component';
-import { NewUserComponent } from './components/new-user/new-user.component';
 import { UserComponent } from './components/user/user.component';
 import { SignupPageComponent } from './components/signup-page/signup-page.component';
 import { UpdateUserInfoPageComponent } from './components/update-user-info-page/update-user-info-page.component';
@@ -31,9 +28,6 @@ import { UpdateUserInfoPageComponent } from './components/update-user-info-page/
     LoginPageComponent,
     ButtonComponentComponent,
     NavbarComponentComponent,
-    RegisterComponent,
-    UsersContainerComponent,
-    NewUserComponent,
     UserComponent,
     SignupPageComponent,
     UpdateUserInfoPageComponent,

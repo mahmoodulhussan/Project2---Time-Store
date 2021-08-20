@@ -44,11 +44,11 @@ headers = headers.set('Content-Type', 'application/json');
  
   }
 
-  update( email:string, password:string) : Observable<any>{
-    console.log(email, password)
+  update(id:any, email:string, password:string) : Observable<any>{
+    console.log(id, email, password)
     let headers = new HttpHeaders();
 headers = headers.set('Content-Type', 'application/json');
-    return this.http.post<any>("http://localhost:8080/api/v1/update", JSON.stringify({email,  password}) ,{headers}  )
+    return this.http.post<any>("http://localhost:8080/api/v1/update", JSON.stringify({id, email,  password}) ,{headers}  )
     .pipe(catchError((e)=>{
       return throwError(e);
     }));
@@ -60,19 +60,19 @@ headers = headers.set('Content-Type', 'application/json');
     // this.subject.next({ type: 'error', text: message });
 }
 
-getUsers(){
-  this.http.get<User[]>('http://localhost:3000/users')
-  .pipe(
-    catchError((e)=> {
-      return throwError(e);
-    }))
-    .subscribe(
-      (data) => {
-        this.users = data;
-        this.subject.next(this.users);
-      }
-    )
-}
+// getUsers(){
+//   this.http.get<User[]>('http://localhost:3000/users')
+//   .pipe(
+//     catchError((e)=> {
+//       return throwError(e);
+//     }))
+//     .subscribe(
+//       (data) => {
+//         this.users = data;
+//         this.subject.next(this.users);
+//       }
+//     )
+// }
 
 // addUser(user: User){
 //   let obj = {
