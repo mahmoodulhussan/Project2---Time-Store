@@ -1,7 +1,14 @@
-<p>signup-page works!</p>
+        <h1 class="mx-auto row col-12 justify-content-center text-center p-5 " style="width: 600px">WELCOME TO TIME-STORE</h1>    
+        <div class="container">
+            <div class="d-flex justify-content-center h-100">
+                <div class="card">
+                    <div class="card-body shadow">
+                        <h6>Registration</h6>
 
-<form id="siignup" (ngSubmit)="onSubmit()">
-<div class="register-input">
+<form id="signup" (ngSubmit)="onSubmit()">
+    <div class="float:left margin-right:20px px-4 pt-3 ">
+        <label for="firstName">First Name:</label>
+<div class="">
     
     <input type="text"
         class="create-user"
@@ -9,43 +16,51 @@
         [(ngModel)]="firstName"
         cols="50"
         maxlength="50"
-        placeholder="Type your first name here">
+        placeholder="First Name">
     
 </div>
-
-<div class="register-input">
+<div class="float:left margin-right:20px pt-3 ">
+    <label for="lastName">Last Name:</label>
+<div class="">
     <input type="text"
         class="create-user"
         name="lastName"
         [(ngModel)]="lastName"
-        cols="50"
+        cols=""
         maxlength="50"
-        placeholder="Type your last name here">
+        placeholder="Last Name">
     
 </div>
-
-<div class="register-input">
+<div class="float:left margin-right:20px pt-3 ">
+    <label for="email">Email:</label>
+<div class="">
     <input type="text"
         class="create-user"
         name="email"
         [(ngModel)]="email"
-        cols="50"
+        cols=""
         maxlength="50"
-        placeholder="Type your email here">
+        placeholder="Email">
     
 </div>
 
-<div class="register-input">
+<div class="float:left margin-right:20px pt-3 ">
+    <label for="password">Passowrd:</label>
+<!-- <lable>Password</lable> -->
+<div class="">
     <input type="text"
-        class="create-user"
+        class=""
         name="password"
         [(ngModel)]="password"
         cols="50"
         maxlength="50"
-        placeholder="Type your password here">
+        placeholder="Password">
     
 </div>
-
+<div class="row">
+    <div class="col text-center pt-4">
+<div class="btn-default">
+    </div>
 <input type="submit" value="Signup"/>
 
-</form>
+<!-- </form> -->

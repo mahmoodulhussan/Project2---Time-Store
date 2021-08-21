@@ -1,4 +1,5 @@
 import { NgModule } from '@angular/core';
+import {NgbModule} from '@ng-bootstrap/ng-bootstrap';
 import { BrowserModule } from '@angular/platform-browser';
 
 import { AppComponent } from './app.component';
@@ -13,11 +14,9 @@ import { ReactiveFormsModule } from '@angular/forms';
 
 import { FormsModule } from '@angular/forms';
 import { AppRoutingModule } from './app-routing.module';
-import { RegisterComponent } from './components/register/register.component';
-import { UsersContainerComponent } from './components/users-container/users-container.component';
-import { NewUserComponent } from './components/new-user/new-user.component';
 import { UserComponent } from './components/user/user.component';
 import { SignupPageComponent } from './components/signup-page/signup-page.component';
+import { UpdateUserInfoPageComponent } from './components/update-user-info-page/update-user-info-page.component';
 
 
 
@@ -30,11 +29,9 @@ import { SignupPageComponent } from './components/signup-page/signup-page.compon
     LoginPageComponent,
     ButtonComponentComponent,
     NavbarComponentComponent,
-    RegisterComponent,
-    UsersContainerComponent,
-    NewUserComponent,
     UserComponent,
     SignupPageComponent,
+    UpdateUserInfoPageComponent,
     
   ],
   imports: [
@@ -42,7 +39,8 @@ import { SignupPageComponent } from './components/signup-page/signup-page.compon
     ReactiveFormsModule,
     HttpClientModule,
     FormsModule,
-    AppRoutingModule
+    AppRoutingModule,
+    NgbModule
   ],
   providers: [],
   bootstrap: [AppComponent]

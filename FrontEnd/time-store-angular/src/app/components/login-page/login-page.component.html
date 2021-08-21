@@ -1,21 +1,38 @@
+<h1 class="mx-auto row col-12 justify-content-center text-center p-5 " style="width: 600px">WELCOME TO TIME-STORE</h1>    
+ 
 
-<h1>WELCOME TO TIME-STORE</h1>
-<p>Login to Continue</p>
+<div class="container p-5">
+	<div class="d-flex justify-content-center h-100">
+		<div class="card">
+            <div class="card-body shadow">
+			
+<h6>Login to Continue</h6>
 <h1 *ngIf="error"> Email or Password Incorrect</h1>
 <form id="login" (ngSubmit)="onSubmit()">
-    <div class="input-div">
-        <label for=" email"> Email: </label>
-        <input
-            id=" email"
+    <div class="float:left margin-right:20px pt-3 ">
+        <label for="email">Email:</label>
+    <div class="input-group form-group">
+        <div>
+            <label for="email"> </label>
+            </div>
+        <!-- <div class="input-group-prepend"> -->
+        
+            <!-- <span ><i class="fas fa-user"></i></span> -->
+						
+        
+        <input 
+            id="email"
             type="email"
-            name=" email"
+            name="email"
             maxlength="50"
             required
             [(ngModel)]="email"
-        />
-    </div>
+        /></div>
+    <!-- </div> -->
+    <div class="float:left margin-right:20px pt-3 ">
+        <label for="password">Password:</label>
     <div class="input-div">
-        <label for="password">Password: </label>
+        <label for="password"></label>
         <input
             id="password"
             type="password"
@@ -25,5 +42,9 @@
             [(ngModel)]="password"
         />
     </div>
+    <div class="row">
+        <div class="col text-center pt-4">
+    <div class="btn-default">
+        </div>
     <input type="submit" value="Login"/>
-</form>
+<!-- </form> -->

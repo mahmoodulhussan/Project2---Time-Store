@@ -27,11 +27,11 @@ export class LoginPageComponent implements OnInit {
     this.userService.login(this.email, this.password)    
     .subscribe(data => {console.log(data)
      
-      console.log(data.user.id)
+      console.log(data)
    // save loggined buyer id  in local storage 
-   this.localStorageService.setItem( "id"  ,   JSON.stringify(data.user.id) );
-   this.error = false;
-   this.router.navigateByUrl('');
+   //this.localStorageService.setItem( "id"  ,   JSON.stringify(data.user.id) );
+   //this.error = false;
+  // this.router.navigateByUrl('');
   },
     (error) => this.error = true);
 

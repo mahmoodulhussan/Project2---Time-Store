@@ -1,0 +1,38 @@
+<h1 class="mx-auto row col-12 justify-content-center text-center p-5 " style="width: 600px">WELCOME TO TIME-STORE</h1>    
+<div class="container">
+    <div class="d-flex justify-content-center p-5 h-100">
+        <div class="card">
+            <div class="card-body shadow" >
+
+<form id="update"  (ngSubmit)="onSubmit()">
+    <div class="float:left margin-right:20px pt-3 " >
+        <label for="email">Email:</label>
+    <div class="">
+        <input type="text"
+            class=""
+            name="email"
+            [(ngModel)]="email"
+            cols="50"
+            maxlength="50"
+            placeholder="Email">
+        
+    </div>
+    <div class="float:left margin-right:20px pt-3 ">
+        <label for="password">Password:</label>
+    <div class="">
+        <input type="text"
+            class="create-user"
+            name="password"
+            [(ngModel)]="password"
+            cols="50"
+            maxlength="50"
+            placeholder="Password">
+        
+    </div>
+    <div class="row">
+        <div class="col text-center pt-4">
+    <div class="btn-default">
+        </div>
+    <input type="submit" value="Update"/>
+    
+    <!-- </form> -->

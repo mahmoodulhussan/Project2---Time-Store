@@ -3,7 +3,7 @@ import { User } from '../User';
 import {HttpClient,  HttpHeaders } from '@angular/common/http';
 import { Observable, throwError, Subject } from 'rxjs';
 
-import {catchError, retry} from 'rxjs/operators';
+import {catchError, last, retry} from 'rxjs/operators';
 @Injectable({
   providedIn: 'root'
 })
@@ -25,7 +25,7 @@ export class UserService {
 
     let headers = new HttpHeaders();
 headers = headers.set('Content-Type', 'application/json; charset=utf-8');
-    return this.http.post<any>("http://localhost:3000/login", JSON.stringify({ email,  password}) ,{headers}  )
+    return this.http.post<any>("http://localhost:8080/buyer/login", JSON.stringify({ "email":email,  "pass":password}) ,{headers}  )
     .pipe(catchError((e)=>{
       return throwError(e);
     }));
@@ -33,11 +33,22 @@ headers = headers.set('Content-Type', 'application/json; charset=utf-8');
   }
 
 
-  signup( id:any, firstName:string, lastName:string, email:string, password:string) : Observable<any>{
-
+  signup(firstName:string, lastName:string, email:string, password:string) : Observable<any>{
+    console.log( firstName, lastName, email, password)
     let headers = new HttpHeaders();
-headers = headers.set('Content-Type', 'application/json; charset=utf-8');
-    return this.http.post<any>("http://localhost:3000/signup", JSON.stringify({ id, firstName, lastName, email,  password}) ,{headers}  )
+headers = headers.set('Content-Type', 'application/json');
+    return this.http.post<any>("http://localhost:8080/buyer/register", JSON.stringify({"first":firstName, "last":lastName, "email":email, "pass" :password}) ,{headers}  )
+    .pipe(catchError((e)=>{
+      return throwError(e);
+    }));
+ 
+  }
+
+  update(id:any, email:string, password:string) : Observable<any>{
+    console.log(id, email, password)
+    let headers = new HttpHeaders();
+headers = headers.set('Content-Type', 'application/json');
+    return this.http.post<any>("http://localhost:8080/api/v1/update", JSON.stringify({id, email,  password}) ,{headers}  )
     .pipe(catchError((e)=>{
       return throwError(e);
     }));
@@ -49,19 +60,19 @@ headers = headers.set('Content-Type', 'application/json; charset=utf-8');
     // this.subject.next({ type: 'error', text: message });
 }
 
-getUsers(){
-  this.http.get<User[]>('http://localhost:3000/users')
-  .pipe(
-    catchError((e)=> {
-      return throwError(e);
-    }))
-    .subscribe(
-      (data) => {
-        this.users = data;
-        this.subject.next(this.users);
-      }
-    )
-}
+// getUsers(){
+//   this.http.get<User[]>('http://localhost:3000/users')
+//   .pipe(
+//     catchError((e)=> {
+//       return throwError(e);
+//     }))
+//     .subscribe(
+//       (data) => {
+//         this.users = data;
+//         this.subject.next(this.users);
+//       }
+//     )
+// }
 
 // addUser(user: User){
 //   let obj = {

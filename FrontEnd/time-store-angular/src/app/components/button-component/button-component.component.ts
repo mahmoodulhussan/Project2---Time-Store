@@ -8,7 +8,9 @@ import { Order } from 'src/app/Order';
 })
 export class ButtonComponentComponent implements OnInit {
 @Input() text:String ='';
+// @Input() cButton: String = '';
 
+@Input() class:String = '';
 
 @Output() onClickEmittor: EventEmitter <any>= new EventEmitter();
 
